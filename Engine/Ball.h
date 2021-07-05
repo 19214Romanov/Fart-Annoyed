@@ -14,6 +14,7 @@ class Ball
 		void ReboundX();
 		void ReboundY();
 		RectF GetRect() const;
+		Vec2 GetVeolocity() const;
 
 	private:
 		static constexpr float radius = 7.0f;

@@ -22,25 +22,25 @@ bool Ball::DoWallCollision(const RectF& walls)
 {
 	bool collided = false;
 	const RectF rect = GetRect();
-	if(rect.left <= walls.left)
+	if(rect.left < walls.left)
 	{
 		pos.x += walls.left - rect.left;
 		ReboundX();
 		collided = true;
 	}
-	else if(rect.right >= walls.right)
+	else if(rect.right > walls.right)
 	{
 		pos.x -= rect.right - walls.right;
 		ReboundX();
 		collided = true;
 	}
-	if(rect.up <= walls.up)
+	if(rect.up < walls.up)
 	{
 		pos.y += walls.up - rect.up;
 		ReboundY();
 		collided = true;
 	}
-	else if(rect.bottom >= walls.bottom)
+	else if(rect.bottom > walls.bottom)
 	{
 		pos.y -= rect.bottom - walls.bottom;
 		ReboundY();
@@ -63,4 +63,9 @@ void Ball::ReboundY()
 RectF Ball::GetRect() const
 {
 	return RectF::FromCenter(pos, radius, radius);
+}
+
+Vec2 Ball::GetVeolocity() const
+{
+	return vel;
 }
