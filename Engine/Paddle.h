@@ -18,7 +18,7 @@ class Paddle
 		RectF GetRect() const;
 
 	private:
-		static constexpr float wingWidth = 10.0f;
+		static constexpr float wingWidth = 20.0f;
 		Color colorWing = Colors::Red;
 		Color color = Colors::White;
 		float speed = 300.0f;
