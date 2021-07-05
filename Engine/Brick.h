@@ -14,6 +14,7 @@ class Brick
 		bool DoBallCollision(Ball& ball);
 
 	private:
+		static constexpr float paddindg = 1.0f;
 		RectF rect;
 		Color color;
 		bool destroyed = false;
